@@ -12,4 +12,6 @@ EXPOSE 80
 
 # VOLUME [ "/app/node_modules" ]
 
+VOLUME [ "/temp" ]
+
 CMD [ "npm", "start" ]
