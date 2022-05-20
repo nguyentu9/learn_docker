@@ -1,4 +1,4 @@
-FROM node
+FROM node:18-alpine3.14
 
 WORKDIR /app
 
@@ -9,8 +9,5 @@ RUN npm install
 COPY . .
 
 EXPOSE 80
-
-ENV MONGODB_USERNAME=root
-ENV MONGODB_PASSWORD=secret
 
 CMD ["npm", "start"]
