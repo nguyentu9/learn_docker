@@ -83,9 +83,12 @@ app.delete("/goals/:id", async (req, res) => {
   }
 });
 
+// `mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@mongodb:27017/course-goals?authSource=admin`,
+// `mongodb://host.docker.internal:27017/course-goals?authSource=admin`
+// `mongodb://mongodb:27017/course-goals?authSource=admin`,
+// `mongodb://toan:secret@mongodb:27017/course-goals?authSource=admin&w=1`,
 mongoose.connect(
-  // `mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@mongodb:27017/course-goals?authSource=admin`,
-  `mongodb://host.docker.internal:27017/course-goals?authSource=admin`,
+  `mongodb://mongodb:27017/course-goals?authSource=admin`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
