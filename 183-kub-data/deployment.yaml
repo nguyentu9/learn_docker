@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: story-deployment
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: story
@@ -15,13 +15,11 @@ spec:
       containers:
         - name: story
           image: thanhtoan/kub-data-demo:1
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
           volumeMounts:
             - mountPath: /app/story
               name: story-volume
       volumes:
         - name: story-volume
-          emptyDir: {}
+          hostPath:
+            path: /data
+            type: DirectoryOrCreate
