@@ -15,11 +15,11 @@ spec:
       containers:
         - name: story
           image: thanhtoan/kub-data-demo:1
+          resources: {}
           volumeMounts:
             - mountPath: /app/story
               name: story-volume
       volumes:
         - name: story-volume
-          hostPath:
-            path: /data
-            type: DirectoryOrCreate
+          persistentVolumeClaim:
+            claimName: host-pvc
