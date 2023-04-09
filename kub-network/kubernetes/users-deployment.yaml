@@ -16,5 +16,5 @@ spec:
         - name: users
           image: thanhtoan/kub-demo-users:latest
           env:
-            - name: AUTH_ADDRESSS
-              value: localhost
+            - name: AUTH_ADDRESS
+              value: "10.105.254.132"
